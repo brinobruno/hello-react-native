@@ -3,14 +3,15 @@ import { styles } from './styles'
 
 interface IParticipantProps {
   name: string
+  onRemove: () => void
 }
 
-export function Participant({ name }: IParticipantProps) {
+export function Participant({ name, onRemove }: IParticipantProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{name}</Text>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={onRemove}>
         <Text style={styles.buttonText}>-</Text>
       </TouchableOpacity>
     </View>
