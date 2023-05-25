@@ -2,6 +2,10 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 
 export function Home() {
+  function handleAddParticipant() {
+    console.log('Participant added')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Event name</Text>
@@ -14,7 +18,7 @@ export function Home() {
         placeholder="Participant's name"
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleAddParticipant}>
         <Text style={styles.buttonText}>+</Text>
       </TouchableOpacity>
     </View>
