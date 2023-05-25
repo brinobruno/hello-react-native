@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     color: '#FDFCFE',
+    padding: 16,
   },
   button: {
     width: 56,
