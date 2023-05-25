@@ -15,4 +15,12 @@ export const styles = StyleSheet.create({
     color: '#a0a0a0',
     fontSize: 16,
   },
+  input: {
+    height: 25,
+    borderRadius: 5,
+    padding: 16,
+    fontSize: 16,
+    backgroundColor: '#1F1E25',
+    color: '#FDFCFE',
+  },
 })
