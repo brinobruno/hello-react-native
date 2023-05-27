@@ -29,7 +29,16 @@ export function Home() {
   }
 
   function handleRemoveParticipant(name: string) {
-    console.log(`Participant ${name} was removed.`)
+    Alert.alert('Remove participant', `Do you wish to remove: ${name}?`, [
+      {
+        text: 'No',
+        style: 'cancel',
+      },
+      {
+        text: 'Yes',
+        onPress: () => Alert.alert('Participant removed.'),
+      },
+    ])
   }
 
   return (
