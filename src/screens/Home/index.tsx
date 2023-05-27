@@ -4,6 +4,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Alert,
 } from 'react-native'
 import { styles } from './styles'
 import { Participant } from '../../components/Participant'
@@ -24,7 +25,7 @@ export function Home() {
   ]
 
   function handleAddParticipant() {
-    console.log('Participant added')
+    return Alert.alert('Success!', 'Participant added')
   }
 
   function handleRemoveParticipant(name: string) {
