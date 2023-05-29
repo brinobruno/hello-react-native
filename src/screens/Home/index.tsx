@@ -53,8 +53,6 @@ export function Home() {
           setParticipantsList((prevState) =>
             prevState.filter((participant) => participant.id !== id),
           )
-
-          Alert.alert('Participant removed.')
         },
       },
     ])
