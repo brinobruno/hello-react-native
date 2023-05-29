@@ -1,6 +1,6 @@
 import { StatusBar } from 'react-native'
 
-import { Event } from './src/screens/Event'
+import { Home } from './src/screens/Home'
 
 export default function App() {
   return (
@@ -10,7 +10,8 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <Event />
+
+      <Home />
     </>
   )
 }
