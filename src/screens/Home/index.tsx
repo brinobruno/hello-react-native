@@ -21,9 +21,9 @@ const EmptyListComponent = () => (
 )
 
 export function Home() {
-  const [participantsList, setParticipantsList] = useState([
-    { id: '1', name: 'Bruno' },
-  ])
+  const [participantsList, setParticipantsList] = useState<IParticipantItem[]>(
+    [],
+  )
 
   const [newParticipant, setNewParticipant] = useState<IParticipantItem>({
     id: '',
