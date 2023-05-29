@@ -10,6 +10,11 @@ import {
 import { styles } from './styles'
 import { Participant } from '../../components/Participant'
 
+interface IParticipantItem {
+  id: string
+  name: string
+}
+
 const EmptyListComponent = () => (
   <Text>No one is at the event yet? Add participants to your list</Text>
 )
@@ -63,7 +68,7 @@ export function Home() {
     ])
   }
 
-  const renderItem = ({ item }: { item: { id: string; name: string } }) => (
+  const renderItem = ({ item }: { item: IParticipantItem }) => (
     <Participant
       key={item.id}
       name={item.name}
