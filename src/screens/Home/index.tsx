@@ -75,6 +75,8 @@ export function Home() {
           style={styles.input}
           placeholderTextColor="#6B6B6B"
           placeholder="Event's name"
+          value={newEvent.name}
+          onChangeText={(text) => setNewEvent({ id: '', name: text })}
         />
 
         <TouchableOpacity style={styles.button} onPress={handleAddEvent}>
