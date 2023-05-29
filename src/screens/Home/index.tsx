@@ -41,7 +41,7 @@ export function Home() {
     setNewParticipant({ id: '', name: '' })
   }
 
-  function handleRemoveParticipant(name: string) {
+  function handleRemoveParticipant(id: string, name: string) {
     Alert.alert('Remove participant', `Do you wish to remove: ${name}?`, [
       {
         text: 'No',
@@ -49,7 +49,13 @@ export function Home() {
       },
       {
         text: 'Yes',
-        onPress: () => Alert.alert('Participant removed.'),
+        onPress: () => {
+          setParticipantsList((prevState) =>
+            prevState.filter((participant) => participant.id !== id),
+          )
+
+          Alert.alert('Participant removed.')
+        },
       },
     ])
   }
@@ -57,8 +63,9 @@ export function Home() {
   const renderItem = ({ item }: { item: IParticipantItem }) => (
     <Participant
       key={item.id}
+      id={item.id}
       name={item.name}
-      onRemove={() => handleRemoveParticipant(item.name)}
+      onRemove={() => handleRemoveParticipant(item.id, item.name)}
     />
   )
 
