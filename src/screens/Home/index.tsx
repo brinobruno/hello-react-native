@@ -79,7 +79,11 @@ export function Home() {
           onChangeText={(text) => setNewEvent({ id: '', name: text })}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleAddEvent}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleAddEvent}
+          disabled={!newEvent.name}
+        >
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
