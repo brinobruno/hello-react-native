@@ -22,13 +22,13 @@ const EmptyListComponent = () => (
 
 export function Home() {
   const [participantsList, setParticipantsList] = useState([
-    { id: 1, name: 'Bruno' },
+    { id: '1', name: 'Bruno' },
   ])
 
   function handleAddParticipant() {
     setParticipantsList((prevState) => [
       ...prevState,
-      { id: Math.random(), name: 'New Bruno' },
+      { id: Math.random().toString(), name: 'New Bruno' },
     ])
 
     Alert.alert('Success!', 'Participant added')
