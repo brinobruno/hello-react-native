@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 
 import { styles } from './styles'
 
+interface IEvent {
+  id: string
+  name: string
+}
+
+type Events = IEvent[]
+
 export function Home() {
+  const [eventsList, setEventsList] = useState<Events>([])
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Event App</Text>
