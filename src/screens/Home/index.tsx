@@ -13,6 +13,8 @@ type Events = IEvent[]
 export function Home() {
   const [eventsList, setEventsList] = useState<Events>([])
 
+  const [newEvent, setNewEvent] = useState<IEvent>({ id: '', name: '' })
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Event App</Text>
