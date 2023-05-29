@@ -37,6 +37,8 @@ export function Home() {
     ])
 
     Alert.alert('Success!', 'Participant added')
+
+    setNewParticipant({ id: '', name: '' })
   }
 
   function handleRemoveParticipant(name: string) {
@@ -71,6 +73,7 @@ export function Home() {
           style={styles.input}
           placeholderTextColor="#6B6B6B"
           placeholder="Participant's name"
+          value={newParticipant.name}
           onChangeText={(text) => setNewParticipant({ id: '', name: text })}
         />
 
