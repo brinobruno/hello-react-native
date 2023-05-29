@@ -6,6 +6,7 @@ import {
   FlatList,
   Alert,
 } from 'react-native'
+
 import { styles } from './styles'
 import { Participant } from '../../components/Participant'
 
