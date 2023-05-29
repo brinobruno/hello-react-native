@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native'
 
 import { styles } from './styles'
+import { EventCard } from '../../components/EventCard'
 
 interface IEvent {
   id: string
@@ -42,6 +43,15 @@ export function Home() {
       },
     ])
   }
+
+  const renderItem = ({ item }: { item: IEvent }) => (
+    <EventCard
+      key={item.id}
+      id={item.id}
+      name={item.name}
+      onRemove={() => handleRemoveEvent(item.id, item.name)}
+    />
+  )
 
   return (
     <View style={styles.container}>
