@@ -9,6 +9,10 @@ import {
 import { styles } from './styles'
 import { Participant } from '../../components/Participant'
 
+const EmptyListComponent = () => (
+  <Text>No one is at the event yet? Add participants to your list</Text>
+)
+
 export function Home() {
   const participantsList = [
     {
@@ -88,9 +92,7 @@ export function Home() {
         data={participantsList}
         keyExtractor={(participant) => participant.id}
         renderItem={renderItem}
-        ListEmptyComponent={() => (
-          <Text>No one is at the event yet? Add participants to your list</Text>
-        )}
+        ListEmptyComponent={EmptyListComponent}
       />
     </View>
   )
