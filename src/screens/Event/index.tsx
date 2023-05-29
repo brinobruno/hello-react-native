@@ -22,7 +22,7 @@ const EmptyListComponent = () => (
   </Text>
 )
 
-export function Home() {
+export function Event() {
   const [participantsList, setParticipantsList] = useState<IParticipantItem[]>(
     [],
   )
