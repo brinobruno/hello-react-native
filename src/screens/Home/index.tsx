@@ -42,7 +42,7 @@ export function Home() {
   ]
 
   function handleAddParticipant() {
-    return Alert.alert('Success!', 'Participant added')
+    Alert.alert('Success!', 'Participant added')
   }
 
   function handleRemoveParticipant(name: string) {
