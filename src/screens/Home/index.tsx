@@ -77,7 +77,7 @@ export function Home() {
           placeholder="Event's name"
         />
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleAddEvent}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
