@@ -8,7 +8,7 @@ interface IParticipantProps {
   onRemove: () => void
 }
 
-export function Participant({ id, name, onRemove }: IParticipantProps) {
+export function Participant({ name, onRemove }: IParticipantProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{name}</Text>
