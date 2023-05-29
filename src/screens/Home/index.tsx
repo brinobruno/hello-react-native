@@ -26,6 +26,11 @@ export function Home() {
   ])
 
   function handleAddParticipant() {
+    setParticipantsList((prevState) => [
+      ...prevState,
+      { id: Math.random(), name: 'New Bruno' },
+    ])
+
     Alert.alert('Success!', 'Participant added')
   }
 
