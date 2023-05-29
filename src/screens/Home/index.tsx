@@ -3,7 +3,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  ScrollView,
+  FlatList,
   Alert,
 } from 'react-native'
 import { styles } from './styles'
@@ -11,17 +11,34 @@ import { Participant } from '../../components/Participant'
 
 export function Home() {
   const participantsList = [
-    'Bruno 1',
-    'Bruno 2',
-    'Bruno 3',
-    'Bruno 4',
-    'Bruno 5',
-    'Bruno 6',
-    'Bruno 7',
-    'Bruno 8',
-    'Bruno 9',
-    'Bruno 10',
-    'Bruno 11',
+    {
+      id: '1',
+      name: 'Bruno 1',
+    },
+    {
+      id: '2',
+      name: 'Bruno 2',
+    },
+    {
+      id: '3',
+      name: 'Bruno 3',
+    },
+    {
+      id: '4',
+      name: 'Bruno 4',
+    },
+    {
+      id: '5',
+      name: 'Bruno 5',
+    },
+    {
+      id: '6',
+      name: 'Bruno 6',
+    },
+    {
+      id: '7',
+      name: 'Bruno 7',
+    },
   ]
 
   function handleAddParticipant() {
@@ -41,6 +58,14 @@ export function Home() {
     ])
   }
 
+  const renderItem = ({ item }: { item: { id: string; name: string } }) => (
+    <Participant
+      key={item.id}
+      name={item.name}
+      onRemove={() => handleRemoveParticipant(item.name)}
+    />
+  )
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Event name</Text>
@@ -59,15 +84,14 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView>
-        {participantsList.map((participant, index) => (
-          <Participant
-            key={index}
-            name={participant}
-            onRemove={() => handleRemoveParticipant(participant)}
-          />
-        ))}
-      </ScrollView>
+      <FlatList
+        data={participantsList}
+        keyExtractor={(participant) => participant.id}
+        renderItem={renderItem}
+        ListEmptyComponent={() => (
+          <Text>No one is at the event yet? Add participants to your list</Text>
+        )}
+      />
     </View>
   )
 }
