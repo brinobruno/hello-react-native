@@ -18,7 +18,7 @@ interface IParticipantItem {
 
 const EmptyListComponent = () => (
   <Text style={styles.emptyList}>
-    No one is at the event yet? Add participants to your list
+    No one is at the event yet? Add participants to your guest list
   </Text>
 )
 
