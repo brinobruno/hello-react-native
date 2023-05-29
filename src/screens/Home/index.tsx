@@ -82,7 +82,11 @@ export function Home() {
           onChangeText={(text) => setNewParticipant({ id: '', name: text })}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleAddParticipant}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleAddParticipant}
+          disabled={!newParticipant.name}
+        >
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
