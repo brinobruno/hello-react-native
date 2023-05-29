@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native'
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  FlatList,
+} from 'react-native'
 
 import { styles } from './styles'
 import { EventCard } from '../../components/EventCard'
@@ -10,6 +17,10 @@ interface IEvent {
 }
 
 type Events = IEvent[]
+
+const EmptyListComponent = () => (
+  <Text style={styles.emptyList}>You do not have any events created yet.</Text>
+)
 
 export function Home() {
   const [eventsList, setEventsList] = useState<Events>([])
@@ -70,6 +81,13 @@ export function Home() {
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
+
+      <FlatList
+        data={eventsList}
+        keyExtractor={(participant) => participant.id}
+        renderItem={renderItem}
+        ListEmptyComponent={EmptyListComponent}
+      />
     </View>
   )
 }
