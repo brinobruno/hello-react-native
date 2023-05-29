@@ -17,7 +17,9 @@ interface IParticipantItem {
 }
 
 const EmptyListComponent = () => (
-  <Text>No one is at the event yet? Add participants to your list</Text>
+  <Text style={styles.emptyList}>
+    No one is at the event yet? Add participants to your list
+  </Text>
 )
 
 export function Home() {
