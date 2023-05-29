@@ -25,10 +25,15 @@ export function Home() {
     { id: '1', name: 'Bruno' },
   ])
 
+  const [newParticipant, setNewParticipant] = useState<IParticipantItem>({
+    id: '',
+    name: '',
+  })
+
   function handleAddParticipant() {
     setParticipantsList((prevState) => [
       ...prevState,
-      { id: Math.random().toString(), name: 'New Bruno' },
+      { id: Math.random().toString(), name: newParticipant.name },
     ])
 
     Alert.alert('Success!', 'Participant added')
@@ -66,6 +71,7 @@ export function Home() {
           style={styles.input}
           placeholderTextColor="#6B6B6B"
           placeholder="Participant's name"
+          onChangeText={(text) => setNewParticipant({ id: '', name: text })}
         />
 
         <TouchableOpacity style={styles.button} onPress={handleAddParticipant}>
