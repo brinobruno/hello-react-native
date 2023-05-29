@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Text,
   View,
@@ -20,36 +21,9 @@ const EmptyListComponent = () => (
 )
 
 export function Home() {
-  const participantsList = [
-    {
-      id: '1',
-      name: 'Bruno 1',
-    },
-    {
-      id: '2',
-      name: 'Bruno 2',
-    },
-    {
-      id: '3',
-      name: 'Bruno 3',
-    },
-    {
-      id: '4',
-      name: 'Bruno 4',
-    },
-    {
-      id: '5',
-      name: 'Bruno 5',
-    },
-    {
-      id: '6',
-      name: 'Bruno 6',
-    },
-    {
-      id: '7',
-      name: 'Bruno 7',
-    },
-  ]
+  const [participantsList, setParticipantsList] = useState([
+    { id: 1, name: 'Bruno' },
+  ])
 
   function handleAddParticipant() {
     Alert.alert('Success!', 'Participant added')
